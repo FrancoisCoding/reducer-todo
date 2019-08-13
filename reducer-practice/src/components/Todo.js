@@ -1,13 +1,17 @@
 import React from "react";
 
+// Destructured props
 const Todo = ({ id, task, completed, toggleCompleted }) => {
   return (
-    <div
-      className={"task" + (completed ? " completed" : "")}
-      onClick={() => toggleCompleted(id)}
-    >
-      {task}
-    </div>
+    <ol>
+      <li
+        // Conditionally apply completed class if completed is true
+        className={"task" + (completed ? " completed" : "")}
+        onClick={() => toggleCompleted(id)}
+      >
+        {task}
+      </li>
+    </ol>
   );
 };
 

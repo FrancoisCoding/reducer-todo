@@ -1,7 +1,7 @@
 import React from "react";
 import Todo from "./Todo";
 
-// Destructure props
+// Destructured props
 const TodoList = ({ todosList, toggleCompleted }) => {
   return (
     <div>
