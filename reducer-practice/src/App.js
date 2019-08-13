@@ -1,6 +1,8 @@
 import React, { useReducer } from "react";
 import "./App.css";
-import { initialState, todoReducer } from "./reducers/todoReducer.js";
+import { initialState, todoReducer } from "./reducers/todoReducer";
+import TodoList from "./components/TodoList";
+import TodoForm from "./components/TodoForm";
 
 function App() {
   // Initialize useReducer
@@ -15,8 +17,22 @@ function App() {
     dispatch({ type: "UPDATE", payload: event.target.value });
 
   return (
-    <div className="App">
-      <h1>Start</h1>
+    <div>
+      <h2>What Do You Have For Today?</h2>
+      <div>
+        <TodoForm
+          // Pass down props
+          addTodo={addTodo}
+          clear={clear}
+          handleChange={handleChange}
+          task={state.task}
+        />
+        <TodoList
+          // Pass down props
+          todosList={state.todos}
+          toggleCompleted={toggleCompleted}
+        />
+      </div>
     </div>
   );
 }
