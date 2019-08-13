@@ -6,7 +6,7 @@ export default class TodoList extends Component {
     super(props);
   }
   render() {
-    console.log(this.props.toDoList);
+    console.log("todoList", this.props.toDoList);
     return (
       <div>
         {this.props.toDoList.map(todo => (
